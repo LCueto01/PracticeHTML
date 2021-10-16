@@ -54,3 +54,8 @@ h1{
 #random div{
    margin-left: 10px;
 }
+.productText{
+    margin: 0px;
+    font-size: 20px;
+    color:blue;
+}

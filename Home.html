@@ -32,11 +32,11 @@
 </body>
 
 <script>
-    let items = ["item1", "item2", "item3"];
-    const data = `[{"name":"3060","price":300,"stock":4},{"name":"3070","price":500,"stock":5}]`;
+    const data = `[{"name":"RTX 3060 8gb","price":300,"stock":4},{"name":"RTX 3070 8gb","price":500,"stock":5},{"name":"RTX 3090 24gb","price":2000,"stock":2}]`;
+    const images = ["images\\3060.jpg","images\\3070.jpg","images\\3090.jpg"];
     const products = JSON.parse(data);
-    
 
+    console.log(images.length);
     function does2Stuffs() {
 
         console.log("it shouldve worked");
@@ -47,13 +47,20 @@
     }
 
     function createStuff() {
-        console.log("executed");
+    
         for (let i = 0; i < products.length; i++) {
             const newDiv = document.createElement('div');
-            document.createTextNode(" ");
-            newDiv.appendChild(document.createTextNode(products[i].name + "\n"));
+            const img = document.createElement("img");
+            img.src=images[i];
+            img.style.cssText = "width: 200px; height: 200px;";
+            const headerText = document.createElement("p");
+            headerText.classList.add("productText");
+            headerText.innerText = products[i].name;
+            newDiv.appendChild(headerText);
             newDiv.appendChild(document.createElement("br"));
-            newDiv.appendChild(document.createTextNode("£"+products[i].price + "\n")); 
+            newDiv.appendChild(img);
+            newDiv.appendChild(document.createElement("br"));
+            newDiv.appendChild(document.createTextNode("£"+products[i].price )); 
             newDiv.appendChild(document.createElement("br"));
             newDiv.appendChild(document.createTextNode("Stock: " + products[i].stock));
             let parentDiv = document.getElementById("random");
