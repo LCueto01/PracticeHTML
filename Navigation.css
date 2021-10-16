@@ -27,15 +27,30 @@ h1 a{
     text-decoration: none; 
 }
 body{
-   margin:0;
+   margin:0px;
     
 }
-.para{
-    margin-left: 10px;
+#para{
+    margin-left: 12px;
 }
 h1{
     width:12%;
     float:left;
     color:white;
     margin-left: 20px;
+}
+
+
+.item{
+    border-style: solid;
+    padding:10px;
+    border-color:red;
+    display: inline-block;
+    margin:0 auto;
+    width:30%;
+    
+}
+
+#random div{
+   margin-left: 10px;
 }
