@@ -11,8 +11,8 @@
     <h1><a href="Home.html">Company Name</a></h1>
     <div class="bar">
         <ul>
-            <li><a href="Events.html">Events</a></li>
-            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="Booking.html">System Builder</a></li>
             <li><a href="ContactUs.html">Contact Us</a></li>
             <li><a href="Profile.html">Profile</a></li>
 
@@ -21,60 +21,8 @@
 </head>
 
 <body>
-    THis is the body
-    <p class="para">This is some words</p>
-    <button type="button" onclick="does2Stuffs()">Press me</button>
-    <button type="button" onclick="createStuff()">Create stuff</button>
-
-    <div id="random">
-        <p id="stuff">This is words</p>
-    </div>
-</body>
-
-<script>
-    const data = `[{"name":"RTX 3060 8gb","price":300,"stock":4},{"name":"RTX 3070 8gb","price":500,"stock":5},{"name":"RTX 3090 24gb","price":2000,"stock":2}]`;
-    const images = ["images\\3060.jpg","images\\3070.jpg","images\\3090.jpg"];
-    const products = JSON.parse(data);
-
-    console.log(images.length);
-    function does2Stuffs() {
-
-        console.log("it shouldve worked");
-        console.log(document.getElementsByClassName("para"))
-        document.getElementById("para").innerHTML = "AAAAAAAH";
-
-
-    }
-
-    function createStuff() {
     
-        for (let i = 0; i < products.length; i++) {
-            const newDiv = document.createElement('div');
-            const img = document.createElement("img");
-            img.src=images[i];
-            img.style.cssText = "width: 200px; height: 200px;";
-            const headerText = document.createElement("p");
-            headerText.classList.add("productText");
-            headerText.innerText = products[i].name;
-            newDiv.appendChild(headerText);
-            newDiv.appendChild(document.createElement("br"));
-            newDiv.appendChild(img);
-            newDiv.appendChild(document.createElement("br"));
-            newDiv.appendChild(document.createTextNode("£"+products[i].price )); 
-            newDiv.appendChild(document.createElement("br"));
-            newDiv.appendChild(document.createTextNode("Stock: " + products[i].stock));
-            let parentDiv = document.getElementById("random");
-            let child = document.getElementById("stuff");
-            newDiv.classList.add("item");// adds class item to div
-            parentDiv.insertBefore(newDiv, child)
-        }
-    }
-
-    function jsonStuff() {
-        const dataFromJSON = data;
-    }
-
-
-</script>
+   
+</body>
 
 </html>

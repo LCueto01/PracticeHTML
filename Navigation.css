@@ -42,20 +42,46 @@ h1{
 
 
 .item{
-    border-style: solid;
-    padding:10px;
-    border-color:red;
+    justify-content: center;
     display: inline-block;
-    margin:0 auto;
-    width:30%;
+    margin:10px;
+    width:20%;
     
 }
 
+#random{
+    display: flex;
+    justify-content: center;
+    float: right;
+    width: 85%;
+}
 #random div{
-   margin-left: 10px;
+   margin-left: 20px;
 }
 .productText{
     margin: 0px;
     font-size: 20px;
-    color:blue;
+}
+
+.productPrice{
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.stockText{
+    font-size: 15px;
+    color:green; 
+    margin-top: 5px;
+}
+
+.buyButton{
+
+}
+
+.filterPane{
+    float:left;
+    background-color:lightgray;
+    width: 15%;
+    min-height: calc(100vh - 50px);
 }
