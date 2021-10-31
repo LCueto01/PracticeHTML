@@ -13,11 +13,10 @@
     font-size: 20px;
     padding-left: 20px;
     margin-left:0px;
-    font-weight: bold;
     margin-top:10px;
     margin-bottom: 0px;
     width: 20%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: bold;
 }
 
@@ -94,6 +93,13 @@ h1{
 
 }
 
+#pageButtonsArea{
+    height: 40px; 
+    width:45.6%; 
+    float:right; 
+    margin-bottom: 20px;
+}
+
 .sortingArea{
     padding-top:20px;
     padding-bottom:20px;
@@ -128,6 +134,7 @@ h1{
     font-size: 25px;
     margin-bottom: 5px;
     margin-top: 0px;
+    margin-left:20px;
 }
 
 .stockText{
@@ -157,4 +164,18 @@ h1{
     background-color:lightgray;
     width: 15%;
     min-height: calc(100vh - 50px);
+}
+
+/*
+Home page
+*/
+.slideshowContainer{
+    display:flex;
+    justify-content: center;
+}
+
+.slideshowImg{
+    width:100%;
+    height:500px;
+   
 }

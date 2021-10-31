@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="D:\Renzo\CodePractice\JavaScriptNew\PracticeHTML\Navigation.css">   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <head>
     <!--link to icon library-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="D:\Renzo\CodePractice\JavaScriptNew\PracticeHTML\Navigation.css">
 
     <h1><a href="Home.html">TechNow</a></h1>
     <nav class="bar">
         <div class="searchArea">
             <input type="text" placeholder="Enter a product name">
-            <button id="searchButton"><i class="fa fa-search"></i></button>
-            <button id="basketButton"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+            <button title="searchForProduct" id="searchButton"><i class="fa fa-search"></i></button>
+            <button title="checkBasket" id="basketButton"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
         </div>
         <ul>
             <li><a href="Products.html">Products</a></li>
@@ -28,19 +28,19 @@
 </head>
 <div class="filterPane">
     <p>
-        Options go here
+       
     </p>
 </div>
 <body>
     <div class="sortingArea">
     <label for="viewOptions">Group Products</label>
-    <select name = "viewOptions">
+    <select title = "Viewing Options Drop-Down" name = "viewOptions">
         <option value="many">Many</option>
         <option value ="single">Single</option>
     </select>
 
     <label for="sortOptions">Sort by</label>
-    <select name="sortOptions">
+    <select  title="Sorting Options Drop-Down" name="sortOptions">
         <option value="name">Name A-Z</option>
         <option value="name">Name Z-A</option>
         <option value="priceUp">Price Ascending</option>
@@ -50,25 +50,36 @@
 
     <div id="productsArea">
     </div>
-    <div id="pageButtonsArea" style="height: 40px; width:100%; display: flex; justify-content: center; margin-left: 0px; margin-bottom: 20px;">
-        <button class="pageNav" id="pageBack"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-        <input class="pageNav" id="pageCounter" type="text" value="1" style="width: 2%;" >
-        <button class="pageNav" id = "pageForward" onclick="nextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>   
+    <div id="pageButtonsArea">
+        <button  title="Previous Page Button" class="pageNav" id="pageBack" onclick="previousPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <input title = "Page number Holder " class="pageNav" id="pageCounter" type="text" value="1" style="width: 2%;" >
+        <button title="Next Page Button" class="pageNav" id = "pageForward" onclick="nextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>   
     </div>
 </body>
 <footer>
 </footer>
 
-<script src="ShowProducts.js"></script>
-<script>showProducts();</script>
+<script src="Scripts/ShowProducts.js"></script>
 <script>
+    showProducts();
     function nextPage(){
-        let counter = parseInt(document.getElementById("pageCounter").value);
-        counter++;
-        document.getElementById("pageCounter").value = counter;
-        console.log("this happened");
+        const pageCounter = document.getElementById("pageCounter");
+        let counter = parseInt(pageCounter.value);
         resetProducts();
-        showProducts(12);
+        showProducts((counter*12));
+        counter++;
+        pageCounter.value = counter;
+    }
+
+    function previousPage(){
+        const pageCounter = document.getElementById("pageCounter");
+        let counter = pageCounter.value;
+        if(counter > 1){
+            counter--;
+            pageCounter.value = counter;
+            resetProducts();
+            showProducts((counter*12)-12);  
+        }
     }
 </script>
 
